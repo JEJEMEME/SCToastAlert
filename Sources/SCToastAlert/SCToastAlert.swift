@@ -4,11 +4,13 @@ import SwiftUI
 import UIKit
 
 @available(iOS 13.0, *)
-public struct ToastAlert {
+public struct SCToastAlert {
     private var toastAlert = SCToastAlertUIView()
+    
     public mutating func show(title: String, subTitle: String? = nil, type: ConfigType = .black()) {
         toastAlert.show(title: title, subTitle: subTitle, type: type)
     }
+    
 }
 
 @available(iOS 13.0, *)
@@ -16,11 +18,11 @@ struct SCToastAlertUIView: UIViewRepresentable {
     
     private var view = UIHostingController(rootView: SCToastView())
     
-    internal func makeUIView(context: Context) -> some UIView {
+    func makeUIView(context: Context) -> some UIView {
         return view.view
     }
 
-    internal func updateUIView(_ uiView: UIViewType, context: Context) {
+    func updateUIView(_ uiView: UIViewType, context: Context) {
         
     }
     
