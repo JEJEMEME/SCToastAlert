@@ -7,7 +7,7 @@ import UIKit
 public struct SCToastAlert {
     private var toastAlert = SCToastAlertUIView()
     
-    public mutating func show(title: String, subTitle: String? = nil, type: ConfigType = .black()) {
+    public mutating func show(title: String, subTitle: String? = nil, type: ConfigType = .black(), delay: CGFloat = 0.0) {
         toastAlert.show(title: title, subTitle: subTitle, type: type)
     }
     
@@ -30,7 +30,9 @@ struct SCToastAlertUIView: UIViewRepresentable {
     
     public mutating func show(title: String,
                               subTitle: String? = nil,
-                              type: ConfigType = .black()) {
+                              type: ConfigType = .black(),
+                              delay: CGFloat = 0.0
+    ) {
         
         self.view = UIHostingController(rootView: SCToastView(title: title, subTitle: subTitle, type: type))
         self.view.view.alpha = 0.0
@@ -53,15 +55,17 @@ struct SCToastAlertUIView: UIViewRepresentable {
         
     }
     
-    private func presentAnimate(dismiss: Bool = true) {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.view.view.alpha = 1.0
-        })
-        
-        if dismiss {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                self.hide()
+    private func presentAnimate(dismiss: Bool = true, delay: CGFloat = 0.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.view.view.alpha = 1.0
             })
+            
+            if dismiss {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                    self.hide()
+                })
+            }
         }
     }
     

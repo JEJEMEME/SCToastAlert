@@ -9,6 +9,7 @@ A library that makes Toast Alert globally available.
 - Font customization: You can set the font weight.
 - Set Bottom Padding: You can set the Bottom Padding.
   - Bottom Padding is a padding value calculated based on the bottom of the phone view.
+- Add a delay: You can set a delay between when the Toast Alert is shown.
 
 # Requirements
 - iOS 13.0 or later
@@ -32,6 +33,9 @@ toast.show(title: "Toast Information", subTitle: "Subtitle Information")
 
 // custom BackgroundColor and Text Weight , padding
 toast.show(title: "Toast Information", subTitle: "Subtitle Information", type: .black(fontWeight: .bold, bottomPadding: 70))
+
+// add Delay
+toast.show(title: "Toast Information", subTitle: "Subtitle Information", type: .black(fontWeight: .bold, bottomPadding: 70), delay: 0.2)
 
 ```
 
