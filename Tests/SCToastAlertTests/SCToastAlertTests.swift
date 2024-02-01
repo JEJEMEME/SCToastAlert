@@ -7,7 +7,7 @@ final class SCToastAlertTests: XCTestCase {
     
     func test() {
         if #available(iOS 13.0, *) {
-            var toast = SCToastAlert()
+            var toast = ToastAlert()
             toast.show(title: "Hello World", type: .white())
         } else {
             // Fallback on earlier versions
