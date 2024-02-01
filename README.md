@@ -12,7 +12,7 @@ A library that makes Toast Alert globally available.
 
 # Requirements
 - iOS 13.0 or later
-- Swift 5.0 or later
+- Swift 5.4 or later
 - Xcode 14.0 or later
 
 # Usage
