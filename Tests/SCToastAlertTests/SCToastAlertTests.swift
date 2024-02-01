@@ -3,10 +3,15 @@ import XCTest
 
 final class SCToastAlertTests: XCTestCase {
     func testExample() throws {
-        // XCTest Documentation
-        // https://developer.apple.com/documentation/xctest
-
-        // Defining Test Cases and Test Methods
-        // https://developer.apple.com/documentation/xctest/defining_test_cases_and_test_methods
+    }
+    
+    func test() {
+        if #available(iOS 13.0, *) {
+            var toast = SCToastAlert()
+            toast.show(title: "Hello World", type: .white())
+        } else {
+            // Fallback on earlier versions
+        }
+        
     }
 }
