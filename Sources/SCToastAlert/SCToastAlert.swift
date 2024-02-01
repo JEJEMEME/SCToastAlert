@@ -4,9 +4,8 @@ import SwiftUI
 import UIKit
 
 @available(iOS 13.0, *)
-struct ToastAlert {
+public struct ToastAlert {
     private var toastAlert = SCToastAlertUIView()
-    
     public mutating func show(title: String, subTitle: String? = nil, type: ConfigType = .black()) {
         toastAlert.show(title: title, subTitle: subTitle, type: type)
     }
