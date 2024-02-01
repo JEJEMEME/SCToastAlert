@@ -11,6 +11,8 @@ public struct SCToastAlert {
         toastAlert.show(title: title, subTitle: subTitle, type: type)
     }
     
+    public init() { }
+    
 }
 
 @available(iOS 13.0, *)
